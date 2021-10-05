@@ -1,0 +1,43 @@
+package com.company;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        char alphabets[] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
+                's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+        char caps[] ={'A', 'B', 'C', 'D','E', 'F', 'G', 'H','I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
+                'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+        String morse_code[] = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--",
+                "-.", "---", ".---.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.." };
+        System.out.println("Enter the code or alphabet: ");
+        Scanner input = new Scanner(System.in);
+        String alp_code = input.next();
+        System.out.println("entered code or alphabet is: "+alp_code+caps);
+        boolean flag = false;
+        int i;
+        for ( i = 0; i < alphabets.length|| i < caps.length; i++)
+        {
+            if (alp_code.charAt(0) == (alphabets[i]))
+            {
+                flag = true;
+                System.out.println(" morse_code for alphabet is " + morse_code[i]);
+            }
+            else if(alp_code.charAt(0) == (caps[i]))
+            {
+                flag = true;
+                System.out.println(" morse_code for alphabet is " + morse_code[i]);
+            }
+            else if (alp_code.equals(morse_code[i]))
+            {
+                flag = true;
+                System.out.println("alphabet for morse_code is " + alphabets[i]);
+            }
+        }
+        if (!flag)
+        {
+            System.out.println("invalid input");
+        }
+    }
+}
+
