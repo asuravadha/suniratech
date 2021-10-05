@@ -1,0 +1,35 @@
+
+import java.util.Scanner;
+
+public class Assignment1 {
+
+    public static void main(String[] args) {
+        char[] capsnum = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
+                'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z','1', '2', '3', '4',
+                '5', '6', '7', '8', '9', '0' };
+
+        String[] morse = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--",
+                "-.", "---", ".---.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..",".____",
+                "..___","...__","...._",".....","_....","__...","___..","____.","_____"};
+
+        System.out.println("Enter the code ");
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+
+         boolean flag = true;
+
+        for (int i = 0; i < capsnum.length; i++) {
+            if (str.charAt(0) == capsnum[i]) {
+                flag = false;
+                System.out.println("Equalent morse code is " + morse[i]);
+            } // if
+            else if (str.equals(morse[i])) {
+                flag = false;
+                System.out.println("Equalent capsnum letter is " + capsnum[i]);
+            } // if
+        } // for
+
+
+    }// elseif
+
+}//main
