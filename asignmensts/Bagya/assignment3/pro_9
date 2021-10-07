@@ -1,0 +1,20 @@
+package Project_Euler;
+
+public class pro_9 {
+    public static void main(String[] args){
+
+        for (int num = 3; num <= 1000; num++)
+        {
+            for (int sec_num = num + 1; sec_num < 1000; sec_num++)
+            {
+                double thr_num = num * num +  sec_num * sec_num;
+                double result = Math.sqrt(thr_num);
+                if (num + sec_num + result == 1000)
+                {
+                    System.out.println(num * sec_num * result);
+                    break;
+                }
+            }
+        }
+    }
+}
