@@ -85,13 +85,30 @@ for(String data: details.keySet()){
         System.out.println(data.size());
 
     }
-public static void main(String args[]){
-    //call arraylist to implement it
+private static void iterator(){
+        ArrayList<String> data=new ArrayList<>();
+        String[] names={"Eswar","kannada","srikanya","laddu","anjali","manu","karan"};
+    data.addAll(Arrays.asList(names));
+        Iterator<String> iter=data.iterator();
+        while(iter.hasNext()){
+            System.out.println(iter.next());
+        }
+}
+
+public static void main(String[] args){
+        //call iterator   to implement it
+    iterator();
+
+    // call arraylist to implement it
     //arraylist();
+
+
     //call hashmap to implement it
 //    hashmap();
+
+
 //call hashset to implement it
-    hashset();
+    //hashset();
 
 }
 
