@@ -1,9 +1,6 @@
 package oct08;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 
 public class Collections_pract {
     public static void arraylist(){
@@ -67,11 +64,34 @@ for(String data: details.keySet()){
         }
 
     }
+    private static void hashset(){
+        Scanner input=new Scanner(System.in);
+        HashSet<String> data=new HashSet<>();
+        for(int i=0;i<5;i++){
+            System.out.println("Enter  data");
+            data.add(input.next());
+        }
+        System.out.println("data added to hasset ");
+//traverse thourgh hashset
+
+        for(String info:data){
+            System.out.println("this is the data"+info);
+        }
+        //find a value
+        System.out.println(data.contains("a"));
+////clear hashset
+//        data.clear();
+        //size of my hash set
+        System.out.println(data.size());
+
+    }
 public static void main(String args[]){
     //call arraylist to implement it
     //arraylist();
     //call hashmap to implement it
-    hashmap();
+//    hashmap();
+//call hashset to implement it
+    hashset();
 
 }
 
