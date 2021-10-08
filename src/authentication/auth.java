@@ -1,5 +1,7 @@
 package authentication;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -15,7 +17,11 @@ public class auth extends signup{
                 case "s" -> {
                     String[] userinfo = authentication.asignup(users);
                     if (!userinfo[0].equals("")) {
-                        users.add(new user(userinfo[0], userinfo[1], userinfo[2]));
+
+                        LocalDateTime ldt=LocalDateTime.now();
+                        DateTimeFormatter fldt=DateTimeFormatter.ofPattern("MMM-dd-YYYY HH:mm:ss");
+                        System.out.println("registration  time   "+ldt.format(fldt));
+                        users.add(new user(userinfo[0], userinfo[1], userinfo[2]+"\n\nregistration time"+ldt.format(fldt)));
                     }
                 }
                 case "l" -> authentication.asignin(users);

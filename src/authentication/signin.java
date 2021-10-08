@@ -1,5 +1,7 @@
 package authentication;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -55,7 +57,12 @@ public class signin {
                                 }
                             }
                             case 4 -> {
+                                LocalDateTime ldt=LocalDateTime.now();
+                                DateTimeFormatter fldt=DateTimeFormatter.ofPattern("MMM-dd-YYYY HH:mm:ss");
+
+
                                 System.out.println("loggedout");
+                                System.out.println("logout time   "+ldt.format(fldt));
                                 endflag = false;
                             }
                             default -> System.out.println("invalid input");
