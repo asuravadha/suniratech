@@ -2,6 +2,7 @@ package oct11;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -25,23 +26,43 @@ public class Main {
 
 
 
-////reading data
-//        HashMap<String,String> usercred=new HashMap<>();
-//        File file=new File("files.txt");
-//        try {
-//            Scanner input=new Scanner(file);
-//            while(input.hasNextLine()){
-//                String data=input.nextLine();
-//                String[] up=data.split(" ",2);
-//                usercred.put(up[0],up[1]);
-//            }
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
+
+
+        //write data to a file
+        try {
+            Scanner input=new Scanner(System.in);
+            FileWriter writer=new FileWriter("files.txt");
+            System.out.println("enter username");
+            String username=input.next();
+            System.out.println("enter password");
+            String password=input.next();
+            filereader();
+            writer.write(" ");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
 
     }
 
+    private static void filereader() {
+        //reading data
+        HashMap<String,String> usercred=new HashMap<>();
+        File file=new File("files.txt");
+        try {
+            Scanner input=new Scanner(file);
+            while(input.hasNextLine()){
+                String data=input.nextLine();
+                String[] up=data.split(" ",2);
+                usercred.put(up[0],up[1]);
+                System.out.println(data);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 }
